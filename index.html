@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Studio QR Code</title>
+    <link rel="stylesheet" href="assets/styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <aside class="sidebar" aria-label="Types de QR code">
+        <div class="brand">
+          <span class="brand-mark">QR</span>
+          <div>
+            <strong>Studio QR</strong>
+            <span>Générateur QR Code</span>
+          </div>
+        </div>
+
+        <nav class="type-nav" id="typeNav" aria-label="Contenus">
+          <button class="type-button is-active" type="button" data-type="url">URL</button>
+          <button class="type-button" type="button" data-type="text">Texte</button>
+          <button class="type-button" type="button" data-type="vcard">Carte de visite</button>
+          <button class="type-button" type="button" data-type="email">Email</button>
+          <button class="type-button" type="button" data-type="whatsapp">Whatsapp</button>
+          <button class="type-button" type="button" data-type="wifi">Wifi</button>
+          <button class="type-button" type="button" data-type="phone">Téléphone</button>
+          <button class="type-button" type="button" data-type="sms">SMS</button>
+          <button class="type-button" type="button" data-type="calendar">Calendrier</button>
+          <button class="type-button" type="button" data-type="geo">Géolocalisation</button>
+          <button class="type-button" type="button" data-type="socialmedia">Réseaux sociaux</button>
+        </nav>
+      </aside>
+
+      <section class="workspace">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Création instantanée et locale</p>
+            <h1>Générateur de QR code </h1>
+            <p class="privacy-note">Tout est généré dans votre navigateur : aucune donnée n’est transmise à un serveur.</p>
+          </div>
+          <div class="export-actions">
+            <button class="icon-button" id="downloadPng" type="button" title="Exporter en PNG" aria-label="Exporter en PNG">
+              PNG
+            </button>
+            <button class="icon-button" id="downloadJpg" type="button" title="Exporter en JPG" aria-label="Exporter en JPG">
+              JPG
+            </button>
+            <button class="icon-button" id="downloadSvg" type="button" title="Exporter en SVG" aria-label="Exporter en SVG">
+              SVG
+            </button>
+          </div>
+        </header>
+
+        <div class="content-grid">
+          <section class="panel editor-panel" aria-label="Édition du QR code">
+            <div class="tabs" role="tablist" aria-label="Paramètres">
+              <button class="tab-button is-active" type="button" data-tab="content">Contenu</button>
+              <button class="tab-button" type="button" data-tab="style">Style</button>
+              <button class="tab-button" type="button" data-tab="frame">Cadre</button>
+            </div>
+
+            <div class="tab-panel is-active" id="tab-content">
+              <div id="dynamicFields" class="field-grid"></div>
+            </div>
+
+            <div class="tab-panel" id="tab-style">
+              <div class="theme-picker" id="themePicker" aria-label="Thèmes de couleur">
+                <button class="theme-choice is-active" type="button" data-theme="atelier">
+                  <span class="swatches"><i style="background:#000000"></i><i style="background:#ffa726"></i><i style="background:#ffffff"></i></span>
+                  Emulsion
+                </button>
+                <button class="theme-choice" type="button" data-theme="nocturne">
+                  <span class="swatches"><i style="background:#111827"></i><i style="background:#60a5fa"></i><i style="background:#f8fafc"></i></span>
+                  Nocturne
+                </button>
+                <button class="theme-choice" type="button" data-theme="corail">
+                  <span class="swatches"><i style="background:#1f2937"></i><i style="background:#ef6f61"></i><i style="background:#fff7ed"></i></span>
+                  Corail
+                </button>
+                <button class="theme-choice" type="button" data-theme="menthe">
+                  <span class="swatches"><i style="background:#12312b"></i><i style="background:#2eb67d"></i><i style="background:#f3fff8"></i></span>
+                  Menthe
+                </button>
+                <button class="theme-choice" type="button" data-theme="encre">
+                  <span class="swatches"><i style="background:#0f172a"></i><i style="background:#7c3aed"></i><i style="background:#f8fafc"></i></span>
+                  Encre
+                </button>
+                <button class="theme-choice" type="button" data-theme="soleil">
+                  <span class="swatches"><i style="background:#2f241d"></i><i style="background:#f59e0b"></i><i style="background:#fffaf0"></i></span>
+                  Soleil
+                </button>
+                <button class="theme-choice" type="button" data-theme="rubis">
+                  <span class="swatches"><i style="background:#251018"></i><i style="background:#be123c"></i><i style="background:#fff1f2"></i></span>
+                  Rubis
+                </button>
+                <button class="theme-choice" type="button" data-theme="lagon">
+                  <span class="swatches"><i style="background:#082f49"></i><i style="background:#06b6d4"></i><i style="background:#ecfeff"></i></span>
+                  Lagon
+                </button>
+                <button class="theme-choice" type="button" data-theme="graphite">
+                  <span class="swatches"><i style="background:#18181b"></i><i style="background:#71717a"></i><i style="background:#fafafa"></i></span>
+                  Graphite
+                </button>
+                <button class="theme-choice" type="button" data-theme="violette">
+                  <span class="swatches"><i style="background:#2e1065"></i><i style="background:#a855f7"></i><i style="background:#faf5ff"></i></span>
+                  Violette
+                </button>
+              </div>
+              <div class="field-grid two-cols">
+                <label class="field">
+                  <span>Forme des points</span>
+                  <select id="dotShape">
+                    <option value="rounded">Arrondie</option>
+                    <option value="dots">Pastilles</option>
+                    <option value="classy-rounded">Élégant arrondi</option>
+                    <option value="classy">Élégant</option>
+                    <option value="square">Carrée</option>
+                    <option value="extra-rounded">Très arrondie</option>
+                  </select>
+                </label>
+                <label class="field">
+                  <span>Coins principaux</span>
+                  <select id="cornerShape">
+                    <option value="extra-rounded">Très arrondis</option>
+                    <option value="dot">Ronds</option>
+                    <option value="square">Carres</option>
+                  </select>
+                </label>
+                <label class="field">
+                  <span>Couleur des éléments</span>
+                  <input id="dotColor" type="color" value="#000000">
+                </label>
+                <label class="field">
+                  <span>Couleur de fond</span>
+                  <input id="backgroundColor" type="color" value="#ffffff">
+                </label>
+                <label class="check-field">
+                  <input id="transparentBackground" type="checkbox">
+                  <span>Fond transparent</span>
+                </label>
+                <label class="field">
+                  <span>Couleur des coins</span>
+                  <input id="cornerColor" type="color" value="#ffa726">
+                </label>
+                <label class="field">
+                  <span>Taille</span>
+                  <input id="qrSize" type="range" min="240" max="720" value="420" step="20">
+                </label>
+                <label class="field wide">
+                  <span>Logo central</span>
+                  <input id="logoInput" type="file" accept="image/*">
+                </label>
+                <label class="check-field wide">
+                  <input id="hideLogoBackground" type="checkbox" checked>
+                  <span>Dégager les modules sous le logo</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="tab-panel" id="tab-frame">
+              <div class="frame-picker" id="framePicker" aria-label="Choix du cadre">
+                <button class="frame-choice is-active" type="button" data-frame="none">Sans</button>
+                <button class="frame-choice" type="button" data-frame="classic">Classique</button>
+                <button class="frame-choice" type="button" data-frame="ticket">Ticket</button>
+                <button class="frame-choice" type="button" data-frame="badge">Badge</button>
+                <button class="frame-choice" type="button" data-frame="poster">Poster</button>
+              </div>
+              <div class="field-grid two-cols">
+                <label class="check-field wide">
+                  <input id="frameTextEnabled" type="checkbox">
+                  <span>Afficher le texte du cadre</span>
+                </label>
+                <label class="field">
+                  <span>Texte du cadre</span>
+                  <input id="frameText" type="text" value="Scannez-moi">
+                </label>
+                <label class="field">
+                  <span>Couleur du cadre</span>
+                  <input id="frameColor" type="color" value="#ffa726">
+                </label>
+                <label class="field">
+                  <span>Couleur du texte</span>
+                  <input id="frameTextColor" type="color" value="#111111">
+                </label>
+                <label class="field wide">
+                  <span>Épaisseur du cadre</span>
+                  <input id="frameWidth" type="range" min="2" max="28" value="10" step="1">
+                </label>
+              </div>
+            </div>
+          </section>
+
+          <section class="preview-zone" aria-label="Aperçu">
+            <div class="preview-toolbar">
+              <span>Fond d’aperçu</span>
+              <label class="switch-field">
+                <input id="previewLightMode" type="checkbox">
+                <span class="switch-track" aria-hidden="true"></span>
+                <span>Clair</span>
+              </label>
+            </div>
+            <div class="device" id="previewDevice">
+              <div class="preview-card frame-none" id="previewCard">
+                <div class="frame-title" id="frameTitle">Scannez-moi</div>
+                <div id="qrPreview" class="qr-preview" aria-live="polite"></div>
+              </div>
+            </div>
+            <div class="quality-row">
+              <span>Correction d'erreur élevée</span>
+              <span>PNG · JPG · SVG</span>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" aria-label="Pied de page">
+      <div class="footer-inner">
+        <div class="footer-copy">
+          <span>Fabrice SIMONET</span>
+          <span>Générateur QR Code</span>
+          <a href="https://emulsion.io/mentions-legales">Mentions légales</a>
+        </div>
+        <a class="footer-brand" href="https://emulsion.io" title="Agence Emulsion.io | Simonet Fabrice">
+          <img src="https://cdn.emulsion.io/signature/fond-noir.svg" width="25" height="23" alt="Agence Emulsion.io | Simonet Fabrice">
+          <span class="footer-brand-name">Emulsion</span><span class="footer-brand-dot">.io</span>
+        </a>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/qr-code-styling@1.9.2/lib/qr-code-styling.js"></script>
+    <script src="assets/app.js"></script>
+  </body>
+</html>

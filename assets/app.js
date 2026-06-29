@@ -99,6 +99,7 @@ const typeDefinitions = {
 };
 
 const colorThemes = {
+  black: { dot: "#000000", corner: "#000000", background: "#ffffff", frame: "#000000", frameText: "#ffffff" },
   atelier: { dot: "#000000", corner: "#ffa726", background: "#ffffff", frame: "#ffa726", frameText: "#111111" },
   nocturne: { dot: "#111827", corner: "#60a5fa", background: "#f8fafc", frame: "#111827", frameText: "#f8fafc" },
   corail: { dot: "#1f2937", corner: "#ef6f61", background: "#fff7ed", frame: "#ef6f61", frameText: "#ffffff" },
@@ -151,9 +152,9 @@ const qrCode = new QRCodeStyling({
   data: "https://example.com",
   margin: 12,
   qrOptions: { errorCorrectionLevel: "H" },
-  dotsOptions: { color: "#000000", type: "rounded" },
-  cornersSquareOptions: { color: "#ffa726", type: "extra-rounded" },
-  cornersDotOptions: { color: "#ffa726", type: "dot" },
+  dotsOptions: { color: "#000000", type: "square" },
+  cornersSquareOptions: { color: "#000000", type: "square" },
+  cornersDotOptions: { color: "#000000", type: "square" },
   backgroundOptions: { color: "#ffffff" },
   imageOptions: { crossOrigin: "anonymous", margin: 8, imageSize: 0.28, hideBackgroundDots: true },
 });

@@ -66,7 +66,11 @@
 
             <div class="tab-panel" id="tab-style">
               <div class="theme-picker" id="themePicker" aria-label="Thèmes de couleur">
-                <button class="theme-choice is-active" type="button" data-theme="atelier">
+                <button class="theme-choice is-active" type="button" data-theme="black">
+                  <span class="swatches"><i style="background:#000000"></i><i style="background:#111111"></i><i style="background:#ffffff"></i></span>
+                  Black
+                </button>
+                <button class="theme-choice" type="button" data-theme="atelier">
                   <span class="swatches"><i style="background:#000000"></i><i style="background:#ffa726"></i><i style="background:#ffffff"></i></span>
                   Emulsion
                 </button>
@@ -115,7 +119,7 @@
                     <option value="dots">Pastilles</option>
                     <option value="classy-rounded">Élégant arrondi</option>
                     <option value="classy">Élégant</option>
-                    <option value="square">Carrée</option>
+                    <option value="square" selected>Carrée</option>
                     <option value="extra-rounded">Très arrondie</option>
                   </select>
                 </label>
@@ -124,7 +128,7 @@
                   <select id="cornerShape">
                     <option value="extra-rounded">Très arrondis</option>
                     <option value="dot">Ronds</option>
-                    <option value="square">Carres</option>
+                    <option value="square" selected>Carrés</option>
                   </select>
                 </label>
                 <label class="field">
@@ -141,7 +145,7 @@
                 </label>
                 <label class="field">
                   <span>Couleur des coins</span>
-                  <input id="cornerColor" type="color" value="#ffa726">
+                  <input id="cornerColor" type="color" value="#000000">
                 </label>
                 <label class="field">
                   <span>Taille</span>
@@ -177,11 +181,11 @@
                 </label>
                 <label class="field">
                   <span>Couleur du cadre</span>
-                  <input id="frameColor" type="color" value="#ffa726">
+                  <input id="frameColor" type="color" value="#000000">
                 </label>
                 <label class="field">
                   <span>Couleur du texte</span>
-                  <input id="frameTextColor" type="color" value="#111111">
+                  <input id="frameTextColor" type="color" value="#ffffff">
                 </label>
                 <label class="field wide">
                   <span>Épaisseur du cadre</span>

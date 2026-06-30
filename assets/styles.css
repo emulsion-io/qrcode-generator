@@ -73,7 +73,7 @@ button {
   place-items: center;
   border-radius: 8px;
   background: var(--accent);
-  color: #111111;
+  color: #000000;
   font-weight: 800;
 }
 

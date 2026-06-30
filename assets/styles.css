@@ -66,7 +66,7 @@ button {
   padding: 0 8px;
 }
 
-.brand-mark {
+.brand .brand-mark {
   display: grid;
   width: 44px;
   height: 44px;
